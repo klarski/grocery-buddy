@@ -4,13 +4,9 @@ function DBController ($scope){
 	$scope.listArray = ["Bread", "Eggs", "Milk", "Flour"];
 
 	$scope.addItem = function(){
-		if($scope.itemName.length > 1){
 		$scope.listArray.push($scope.itemName);
 
 		$scope.itemName = ""; 
-		}else{
-
-		}
 
 	};
 
