@@ -8,9 +8,12 @@ function DBController ($scope){
 
 		if($scope.itemName.length > 1){
 
-				$scope.listArray.push($scope.itemName);
+			$scope.listArray.push($scope.itemName);
 
-				$scope.itemName = ""; 
+			$scope.itemName = "";
+				
+			console.log("I work") 
+
 		}
 	}
 

@@ -26,21 +26,23 @@
       </div>
       <div ng-controller="DBController">
         <div class="jumbotron">
+          <form ng-submit="addItem()">
           <label name="item">Item:</label>
             <div class="input-group">
               <input class='form-control' ng-model="itemName" ng-minlength="2" type="text" name="item" required />
                <span class="input-group-btn">
-               <button type="submit" class="btn btn-default" ng-disabled="userForm.$invalid" ng-click="addItem()">Add to List</button>
+               <input type="submit" value="Add to List" class="btn btn-default" ng-disabled="userForm.$invalid"/>
                </span>
+          </form>
         </div>
       </div>
         
         <div class="panel panel-default">
           <div class="panel-heading">My Grocery List</div>
-          <ul class="list-group">
-            <li class="list-group-item" ng-repeat="item in listArray">
+            <ul class="list-group">
+              <li class="list-group-item" ng-repeat="item in listArray track by $index">
               {{item}}
-              <button type="button" class="btn btn-default btn-xs pull-right" ng-click="deleteItem()">Delete</button>
+              <button type="button" class="btn btn-default btn-xs pull-right" ng-click="deleteItem(item)">Delete</button>
             </li>
           </ul>
         </div>
